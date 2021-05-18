@@ -9,7 +9,7 @@ const Navbar = () => {
     return(
         <nav className="nav-wrapper black darken-3">
             <div className="container">
-                <Link to='/' className="logo">Manage Projects</Link>
+                <Link to='/' className="logo left"><b>Manage Projects</b></Link>
                 <SignedInLinks/>
                 <SignedOutLinks/>
             </div>
