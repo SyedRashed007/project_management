@@ -30,11 +30,11 @@ class SignIn extends Component {
                 <form onSubmit={this.handleSubmit} className="white">
                     <h4 className="grey-text text-darken-3">Log In</h4>
                     <div className="input-field">
-                        <label htmlFor="email">Email</label>
+                        <label htmlFor="email">testing@test.com</label>
                         <input type="email" id="email" onChange={this.handleChange}/>
                     </div>
                     <div className="input-field">
-                        <label htmlFor="password">Password</label>
+                        <label htmlFor="password">123456</label>
                         <input type="password" id="password" onChange={this.handleChange}/>
                     </div>
                     <div className="input-field">
