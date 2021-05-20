@@ -9,10 +9,10 @@ import {isLoaded} from 'react-redux-firebase'
 
 const Navbar = (props) => {
 
-    const { auth } = props;
+    const { auth, profile } = props;
     // console.log(auth)
 
-   const links = auth.uid ? <SignedInLinks/> : <SignedOutLinks/>
+   const links = auth.uid ? <SignedInLinks profile={profile}/> : <SignedOutLinks/>
 
     return(
         <nav className="nav-wrapper black darken-3">
@@ -26,9 +26,10 @@ const Navbar = (props) => {
 
 
 const mapStateToProps = (state) => {
-    // console.log(state);
+    console.log(state);
     return{
-        auth: state.firebase.auth
+        auth: state.firebase.auth,
+        profile: state.firebase.profile
     }
 }
 
