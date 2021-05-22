@@ -18,8 +18,12 @@ class CreateProject extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         // console.log(this.state)
-        this.props.createProject(this.state) 
-        this.props.history.push('/');
+        if(this.state.title && this.state.content){
+            this.props.createProject(this.state) 
+            this.props.history.push('/');
+        } else {
+            alert('Enter your title and content')
+        }
     }
 
 
