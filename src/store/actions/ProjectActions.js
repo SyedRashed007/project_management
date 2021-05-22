@@ -18,16 +18,16 @@ export const createProject = (project) => {
     }
 }
 
-export const deleteProject = id => {
-    return (dispatch, getState, {getFirebase, getFirestore}) => {
-        const firestore = getFirestore();
+// export const deleteProject = id => {
+//     return (dispatch, getState, {getFirebase, getFirestore}) => {
+//         const firestore = getFirestore();
 
-        firestore.collection('projects').doc(id)
-        .delete()
-        .then(() => {
-            dispatch({ type: 'DELETE_PROJECT',id})
-        }).catch((err)=> {
-            dispatch({ type: 'DELETE_PROJECT_ERROR', err})
-        })
-    }
-}
+//         firestore.collection('projects').doc(id)
+//         .delete()
+//         .then(() => {
+//             dispatch({ type: 'DELETE_PROJECT',id})
+//         }).catch((err)=> {
+//             dispatch({ type: 'DELETE_PROJECT_ERROR', err})
+//         })
+//     }
+// }
