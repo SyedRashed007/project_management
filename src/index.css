@@ -55,6 +55,9 @@ input[type="password"]:not(.browser-default):focus:not([readonly]) + label {
 
 .addItems {
   padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .form {
@@ -79,8 +82,8 @@ input[type="password"]:not(.browser-default):focus:not([readonly]) + label {
   cursor: pointer;
   pointer-events: auto;
   z-index: 10;
-  color: #666;
-  font-size: 1.5rem;
+  color: rgb(61, 61, 61);
+  font-size: 1.3rem;
 }
 
 .eachItem {
@@ -89,6 +92,7 @@ input[type="password"]:not(.browser-default):focus:not([readonly]) + label {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  text-transform: capitalize;
 }
 
 .eachItem:hover {
@@ -103,7 +107,6 @@ input[type="password"]:not(.browser-default):focus:not([readonly]) + label {
 
 .fa-trash-alt,
 .fa-edit {
-  margin-left: -2.5rem;
   cursor: pointer;
   pointer-events: auto;
   /* z-index: 10; */
