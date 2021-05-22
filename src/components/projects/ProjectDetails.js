@@ -4,7 +4,7 @@ import { firestoreConnect, getFirebase } from 'react-redux-firebase'
 import { compose } from 'redux'
 import {Redirect} from 'react-router-dom'
 import moment from 'moment' 
-// import {deleteProject} from '../../store/actions/ProjectActions'
+import '../../index.css'
 
 
 
@@ -25,19 +25,19 @@ const  ProjectDetails = (props) => {
         
     }
 
-    if (!auth.uid) return <Redirect to='/signin'/>
+    if (!auth.uid) return <Redirect to='/'/>
     if (project) {
         return(
             <div className="container section project-details">
                 <div className="card z-depth-0">
                     <div className="card medium" style={{ overflow: "scroll", width: '100%'}}>
-                        <span className="card-title">{project.title}</span>
-                        <p>{project.content}</p>
+                        <span className="card-title" style={{ display: "flex", justifyContent: "center", fontWeight: "bold"}}>{project.title}</span>
+                        <p style={{ display: "flex", justifyContent: "center", fontSize: "larger", textTransform: "capitalize"}}>{project.content}</p>
                     </div>
                     <div className="card-action grey lighten-4 grey-text">
                         <div>Posted by {project.authorFirstName} {project.authorLastName}</div>
                         <div>{moment(project.createdAt.toDate()).calendar()}</div>
-                        <button className='material-icons' onClick={handleDelete} style={{ cursor: 'pointer'}}>delete</button>
+                        <button className='fa' onClick={handleDelete} style={{ cursor: 'pointer'}}>Delete</button>
                     </div>
                 </div>
             </div>
@@ -64,12 +64,6 @@ const mapStateToProps = (state, ownProps) => {
         // id: id
     }
 }
-
-// const mapDisptachToProps = dispatch => {
-//     return {
-//         deleteProject: (id) => dispatch(deleteProject(id))
-//     }
-// }
 
 export default compose(
     connect(mapStateToProps),
